@@ -1,0 +1,2 @@
+# Pin the major: MCP 2.x moved mcp.server.fastmcp.
+mcp>=1.2,<2

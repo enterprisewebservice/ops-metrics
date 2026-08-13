@@ -1,0 +1,11 @@
+apiVersion: mcp.kuadrant.io/v1alpha1
+kind: MCPServerRegistration
+metadata:
+  name: ops-metrics
+  namespace: agent-office
+  labels: {app.kubernetes.io/name: ops-metrics, app.kubernetes.io/component: registration}
+spec:
+  prefix: metrics_
+  path: /mcp
+  targetRef: {group: gateway.networking.k8s.io, kind: HTTPRoute, name: ops-metrics-route}
+  credentialRef: {name: github-mcp-broker-token, key: AUTHORIZATION}
